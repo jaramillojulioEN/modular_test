@@ -12,8 +12,13 @@ export const routes: Routes = [
       import('./providers/providers.routes').then((m) => m.providersRoutes),
   },
   {
+    path: 'auth',
+    loadChildren: () =>
+      import('./auth/auth.routes').then((m) => m.AuthRoutes),
+  },
+  {
     path: '',
-    redirectTo: 'inventory',
+    redirectTo: 'auth/login',
     pathMatch: 'full',
   },
 ];

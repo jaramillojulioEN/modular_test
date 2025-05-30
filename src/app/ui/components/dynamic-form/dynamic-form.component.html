@@ -1,1 +1,6 @@
-<p>dynamic-form works!</p>
+<form [formGroup]="form">
+    <div *ngFor="let field of fields">
+      <label>{{ field.label }}</label>
+      <input [type]="field.tipo" [formControlName]="field.nombre" />
+    </div>
+</form>
